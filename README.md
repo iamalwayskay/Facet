@@ -1,3 +1,26 @@
+# Facet
+
+Kay's fork of [ObsidianUI](https://github.com/Atharvsinh-codez/ObsidianUI), licensed under MIT.
+Default source for dashboards and non-Shopify interfaces. Keep each destination project's framework and brand.
+
+Local checkout: `/home/kay/Code/Websites/Facet`. `origin` is `iamalwayskay/Facet`; `upstream` is `Atharvsinh-codez/ObsidianUI`.
+The shared `obsidian-ui` skill describes the consumer workflow. Use Node 22 from `/home/kay/.local/bin`.
+
+```sh
+facet list dashboard
+# From a configured destination project:
+facet add dashboard-shell --dry-run
+facet add dashboard-shell
+```
+
+The `facet` operator CLI uses this fork's local generated registry and shadcn 4.23.0.
+It installs editable component files, not a global application dependency. It does not deploy anything.
+The library checkout retains npm's upstream lockfile and package-manager pin for the baseline.
+Run its npm commands with `PATH=/home/kay/.local/bin:$PATH`.
+See STATE.md for verification and upstream limitations.
+
+## Upstream README
+
 <div align="center">
   <a href="https://www.obsidianui.dev">
     <img
