@@ -11,6 +11,7 @@ export default defineConfig([
     ".wrangler/**",
     "out/**",
     "coverage/**",
+    "checks/libraries/**",
     "public/r/**",
     "public/_pagefind/**",
     "skills/**",

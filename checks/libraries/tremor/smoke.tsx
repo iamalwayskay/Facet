@@ -1,0 +1,11 @@
+import React from "react";
+import assert from "node:assert/strict";
+import { renderToStaticMarkup } from "react-dom/server";
+import { Demo } from "./src/demo";
+const html = renderToStaticMarkup(<Demo/>);
+assert.match(html, /<table/);
+assert.match(html, /<th[^>]*>Day<\/th>/);
+assert.match(html, /<td[^>]*>Monday<\/td>/);
+assert.match(html, /tremor-id="tremor-raw"/);
+assert.match(html, /recharts-responsive-container/);
+console.log("Tremor Card, Table and chart-container SSR passed; the chart SVG requires a browser size.");

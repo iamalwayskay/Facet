@@ -19,6 +19,20 @@ The library checkout retains npm's upstream lockfile and package-manager pin for
 Run its npm commands with `PATH=/home/kay/.local/bin:$PATH`.
 See STATE.md for verification and upstream limitations.
 
+### Other installed libraries
+
+Read-only source checkouts for Kumo, Primer, Cloudscape and Tremor are siblings of Facet.
+Working isolated consumers live in `checks/libraries/{kumo,primer,cloudscape,tremor}`.
+Each has pinned dependencies, its own pnpm lockfile, and a README with imports and styles.
+Run `pnpm run check` from the selected consumer directory with Node 22 on PATH.
+Those independent projects are excluded from the library site's lint and TypeScript scope.
+Their own checks cover real types, server rendering, and browser JS/CSS builds.
+
+`kumo ls`, `kumo doc Button`, `kumo blocks`, `kumo init`, and `kumo add PageHeader`
+use the locally installed Kumo CLI. Run init/add from the destination project.
+Primer and Cloudscape use package installation; Tremor Raw uses copied source and helpers.
+The shared `obsidian-ui` skill selects the source and records the verified routes.
+
 ## Upstream README
 
 <div align="center">

@@ -1,0 +1,5 @@
+<!doctype html><meta charset="utf-8"><title>Local UI library setup</title><h1>Local UI library setup</h1><p>Make Kumo, Primer, Cloudscape and Tremor directly usable and verify each with real source.</p><pre>Official upstream clones (read-only)
+           ↓
+Facet/checks/libraries/{kumo,primer,cloudscape,tremor}
+           ↓ pinned dependencies + rendered component checks
+obsidian-ui skill selection rules → existing Claude/Codex startup reminder</pre><h2>Phases</h2><ol><li>Inspect published packages, source, license and style setup.</li><li>Install isolated consumers with pnpm; use copied source for Tremor Raw.</li><li>Run types and real render checks for each.</li><li>Update existing skill references, startup reminder and setup record.</li></ol><h2>Decisions</h2><p>Facet remains default. Kumo covers dense controls; Primer developer workflows; Cloudscape complex resource consoles; Tremor chart patterns. Keep existing project systems. Do not combine full theme systems. Each consumer owns its node_modules and lockfile; pnpm shares package bytes. No new board card or additional MCP.</p>

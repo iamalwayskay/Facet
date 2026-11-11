@@ -1,0 +1,12 @@
+import React from 'react';
+import {renderToString} from 'react-dom/server';
+import {writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import {App} from './smoke';
+const html = renderToString(<App />);
+assert.ok(html.includes('Save settings'));
+assert.ok(html.includes('Repository settings'));
+assert.ok(html.includes('Access controls'));
+assert.ok(html.includes('<button'));
+writeFileSync('dist/rendered.html', html);
+console.log('Real components rendered with expected controls and content.');

@@ -1,0 +1,13 @@
+import {build} from 'esbuild';
+import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+mkdirSync('dist', {recursive: true});
+await build({entryPoints:['server.tsx'], bundle:true, platform:'node', format:'cjs', outfile:'dist/server.cjs', loader:{'.woff':'file','.woff2':'file','.svg':'file','.png':'file'}, logLevel:'warning'});
+execFileSync(process.execPath, ['dist/server.cjs'], {stdio:'inherit'});
+await build({entryPoints:['browser.tsx'], bundle:true, platform:'browser', format:'esm', outfile:'dist/browser.js', loader:{'.woff':'file','.woff2':'file','.svg':'file','.png':'file'}, logLevel:'warning'});
+const css = readFileSync('dist/browser.css','utf8');
+assert.ok(css.length > 1000, 'Component and theme CSS must be bundled');
+assert.ok(css.includes('--'), 'Theme variables must be present');
+writeFileSync('dist/index.html', '<!doctype html><html data-color-mode="light" data-light-theme="light" data-dark-theme="dark"><meta charset="utf-8"><title>Library consumer check</title><link rel="stylesheet" href="./browser.css"><div id="root"></div><script type="module" src="./browser.js"></script></html>');
+console.log(`Browser bundle and ${css.length} bytes of CSS verified.`);

@@ -59,3 +59,8 @@ UK1Sb-ZRte2Iv3pphsfge-files*
 /.agents/
 /skills-lock.json
 /skills/design-to-code/
+
+# Isolated UI library consumer installs and generated output
+/checks/libraries/*/node_modules/
+/checks/libraries/*/dist/
+/checks/libraries/*/build/

@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/tremorlabs/tremor",
+  "commit": "ca4d588f47820ff3d514d37fa4ee08a4222dec11",
+  "license": "Apache-2.0",
+  "files": [
+    "components/Card/Card.tsx",
+    "components/Table/Table.tsx",
+    "components/BarChart/BarChart.tsx",
+    "hooks/useOnWindowResize.ts",
+    "utils/chartColors.ts",
+    "utils/cx.ts",
+    "utils/getYAxisDomain.ts"
+  ],
+  "modifications": "No changes to copied source files."
+}

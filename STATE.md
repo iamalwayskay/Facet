@@ -28,3 +28,23 @@ Kumo 2.18.0 documentation CLI listed components and returned Button docs.
 Detailed evidence and pre-existing build warnings: docs/checks/2026-11-11-ui-library-setup.md.
 Keep npm for this source checkout: its installation patch edits Next dependency files;
 a pnpm migration needs a deliberate supported patch workflow before shared-store use.
+
+2026-11-11: Completed local secondary library integrations, not just reference links.
+Each of checks/libraries/{kumo,primer,cloudscape,tremor} has installed pinned application
+packages (or unchanged licensed Raw source), one pnpm lock, local node_modules and repeatable
+checks. Source references at Websites/{Kumo,Primer,Cloudscape,Tremor} remain clean upstream clones.
+The standalone kumo launcher now uses the installed package and preserves caller cwd.
+Its init/add PageHeader route, docs and block listing passed. The CLI does not install peers.
+The shared skill and existing SessionStart reminder now explain when to choose each library.
+Kumo: operational controls; Primer: developer workflows; Cloudscape: resource consoles;
+Tremor Raw: analytics charts. Facet remains default; avoid mixing complete themes.
+
+All four frozen installs, type checks, real SSR and browser JS/CSS builds passed.
+Browser checks showed real controls/table markup for Kumo, Primer and Cloudscape.
+Tremor rendered one Recharts SVG, two bars and a measured nonzero width.
+The library site's lint and types passed after excluding independent consumer projects.
+Lint retains the pre-existing font warning. Independent review passed with its one issue
+(root TS/ESLint sweeping consumers) closed. No source application conversion or deployment.
+Trap: do not import app dependencies from the consumers; install in each destination.
+Kumo standalone CSS differs from its Tailwind4 route. Current Kumo CLI installs blocks;
+the old documentation-only description was corrected. Each consumer README records details.

@@ -1,0 +1,24 @@
+{
+  "name": "facet-primer-check",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.16.1",
+  "scripts": {
+    "check": "tsc --noEmit && node check.mjs"
+  },
+  "dependencies": {
+    "@primer/primitives": "11.10.0",
+    "@primer/react": "38.45.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-is": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/react-is": "19.3.0",
+    "esbuild": "0.28.2",
+    "typescript": "5.9.3"
+  }
+}
